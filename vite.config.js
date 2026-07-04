@@ -18,8 +18,30 @@ export default defineConfig({
       staticDir: path.join(__dirname, 'dist'),
       // List all 16 of your routes here:
       routes: [
-        '/', 
+        '/',
+        '/nature-explorer',
+        '/space-adventure',
+        '/ocean-explorer',
+        '/time-travelers',
+        '/creative-corner',
+        '/unscrambler',
+        '/translator',
+        '/comics',
         '/blog/aztec-and-maya-civilizations-for-kids',
+        '/blog/mind-blowing-space-facts',
+        '/blog/why-kids-should-learn-languages',
+        '/blog/ocean-facts-for-kids',
+        '/blog/how-egyptians-built-the-pyramids',
+        '/blog/why-comics-are-good-for-kids',
+        '/blog/ancient-china-inventions',
+        '/blog/word-unscrambler-tips-for-kids',
+        '/blog/ancient-greece-facts-for-kids',
+        '/blog/animals-with-superpowers',
+        '/time-travelers/egypt',
+        '/time-travelers/greece',
+        '/time-travelers/china',
+        '/ime-travelers/aztec-maya',
+        '/time-travelers/rome'
         // Add your other 14 paths here
       ],
       // This ensures it waits for your JS to finish before taking the "snapshot"
