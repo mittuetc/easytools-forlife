@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    
+    /* Global Semantic Theme Updates */
+    --primary: 120 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 200 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 47%;
+    
+    --accent: 45 100% 50%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 120 100% 40%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Nature Explorer Specific Theme Variables */
+    --nature-green: 142 76% 36%;
+    --nature-blue: 199 89% 48%;
+    --nature-light-bg: 142 50% 95%;
+    --nature-orange: 38 92% 50%;
+
+    /* Space Adventure Theme Variables */
+    --space-dark-purple: 260 50% 10%;
+    --space-blue: 220 80% 50%;
+    --space-light-blue: 200 90% 70%;
+    --space-glow: 280 80% 60%;
+    --space-accent: 45 100% 50%;
+
+    /* Ocean Explorer Theme Variables */
+    --ocean-blue: 202 100% 37%; /* #0077BE */
+    --ocean-aqua: 196 100% 45%; /* #00A8E8 */
+    --ocean-deep: 210 100% 12%; /* #001F3F */
+    --ocean-sand: 45 100% 50%;  /* #FFD700 */
+    --ocean-light: 208 100% 97%; /* #F0F8FF */
+
+    /* Creative Corner Rainbow Colors */
+    --rainbow-red: 348 83% 47%;
+    --rainbow-orange: 24 95% 53%;
+    --rainbow-yellow: 45 100% 51%;
+    --rainbow-green: 142 71% 45%;
+    --rainbow-blue: 212 100% 48%;
+    --rainbow-purple: 270 60% 55%;
+    --rainbow-pink: 330 80% 60%;
+
+    /* Time Travelers Theme Variables */
+    --parchment: 40 33% 93%; /* Warm cream/tan */
+    --gold: 45 93% 47%; /* Metallic gold */
+    --ancient-brown: 24 30% 20%; /* Dark brown for readable text */
+    
+    --egypt-accent: 45 90% 50%; /* Desert Gold */
+    --greece-accent: 200 80% 45%; /* Aegean Blue */
+    --china-accent: 0 80% 50%; /* Imperial Red */
+    --aztec-accent: 142 60% 40%; /* Jungle Green */
+    --rome-accent: 280 60% 45%; /* Tyrian Purple */
+    
+    /* Navigation Tab Colors */
+    --nav-home: 45 100% 50%; /* Golden #FFD700 */
+    --nav-nature: 142 71% 45%; /* Green #22C55E */
+    --nav-space: 258 90% 66%; /* Purple #8B5CF6 */
+    --nav-unscrambler: 25 95% 53%; /* Orange #F97316 */
+    --nav-translator: 330 81% 60%; /* Pink #EC4899 */
+    --nav-comics: 186 100% 42%; /* Cyan #06B6D4 */
+    --nav-ocean: 196 100% 45%; /* Aqua #00A8E8 */
+    --nav-creative: 270 60% 55%; /* Purple */
+    --nav-time: 40 50% 60%; /* Warm Brown/Gold */
+    
+    /* Playful rounded kid-friendly edges globally or in creative sections */
+    --radius: 1.5rem;
+
+    /* Custom Navigation & Component Properties */
+    --nav-bg: 0 0% 100%;
+    --nav-border: 214 32% 91%;
+    --card-shadow-default: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --card-shadow-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+    --hover-transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --spacing-container: clamp(1rem, 5vw, 2rem);
+
+    /* PB&J Series Vibrant Theme */
+    --pb-brown: 28 73% 51%;
+    --jelly-purple: 270 60% 50%;
+    --bread-tan: 38 60% 85%;
+    --butter-yellow: 48 96% 65%;
+    --comic-red: 350 85% 55%;
+    --comic-blue: 200 95% 50%;
+    --comic-green: 140 70% 50%;
+  }
+  
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    
+    --primary: 120 100% 40%;
+    --primary-foreground: 222 47% 11%;
+    
+    --secondary: 200 100% 50%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 45 100% 50%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 120 100% 40%;
+    
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --nature-green: 142 76% 45%;
+    --nature-blue: 199 89% 55%;
+    --nature-light-bg: 142 50% 10%;
+    --nature-orange: 38 92% 55%;
+
+    --space-dark-purple: 260 50% 10%;
+    --space-blue: 220 80% 50%;
+    --space-light-blue: 200 90% 70%;
+    --space-glow: 280 80% 60%;
+    --space-accent: 45 100% 50%;
+
+    --ocean-blue: 202 100% 45%;
+    --ocean-aqua: 196 100% 55%;
+    --ocean-deep: 210 100% 90%;
+    --ocean-sand: 45 100% 60%;
+    --ocean-light: 210 50% 10%;
+
+    --rainbow-red: 348 83% 55%;
+    --rainbow-orange: 24 95% 60%;
+    --rainbow-yellow: 45 100% 60%;
+    --rainbow-green: 142 71% 55%;
+    --rainbow-blue: 212 100% 60%;
+    --rainbow-purple: 270 60% 65%;
+    --rainbow-pink: 330 80% 65%;
+
+    /* Time Travelers Dark Theme Adjustments */
+    --parchment: 30 15% 15%; /* Darker ancient slate/brown */
+    --ancient-brown: 40 33% 90%; /* Light cream for text */
+    --gold: 45 80% 60%;
+
+    --nav-home: 45 100% 60%;
+    --nav-nature: 142 71% 55%;
+    --nav-space: 258 90% 70%;
+    --nav-unscrambler: 25 95% 60%;
+    --nav-translator: 330 81% 65%;
+    --nav-comics: 186 100% 50%;
+    --nav-ocean: 196 100% 55%;
+    --nav-creative: 270 60% 65%;
+    --nav-time: 40 60% 70%;
+
+    --pb-brown: 28 73% 51%;
+    --jelly-purple: 270 60% 60%;
+    --bread-tan: 38 40% 70%;
+    --butter-yellow: 48 80% 55%;
+    --comic-red: 350 85% 65%;
+    --comic-blue: 200 95% 60%;
+    --comic-green: 140 70% 60%;
+  }
+  
+  * {
+    border-color: hsl(var(--border));
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-size: 18px; /* Larger base font for kid-friendly UI */
+  }
+  
+  body {
+    font-family: "Outfit", sans-serif;
+    overflow-x: hidden;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  p {
+    text-wrap: pretty;
+  }
+
+  a, button, .card-interactive {
+    transition: var(--hover-transition);
+    will-change: transform, opacity;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .neo-brutal {
+    border: 4px solid #000;
+    box-shadow: 6px 6px 0px 0px #000;
+  }
+  
+  .neo-brutal-hover {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    will-change: transform, box-shadow;
+  }
+  
+  .neo-brutal-hover:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0px 0px #000;
+  }
+  
+  .neo-brutal-hover:active {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0px 0px #000;
+  }
+  
+  .font-outfit {
+    font-family: "Outfit", sans-serif;
+  }
+  
+  .font-bangers {
+    font-family: 'Bangers', cursive;
+  }
+
+  /* Time Travelers Utilities */
+  .bg-parchment-pattern {
+    background-color: hsl(var(--parchment));
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  }
+
+  .text-ancient {
+    color: hsl(var(--ancient-brown));
+  }
+
+  .time-travel-card {
+    @apply bg-parchment-pattern border-2 border-gold/30 rounded-2xl shadow-md transition-all duration-300 relative overflow-hidden;
+  }
+
+  .time-travel-card:hover {
+    @apply -translate-y-1 shadow-lg border-gold/60;
+    box-shadow: 0 10px 25px -5px hsl(var(--ancient-brown)/0.15), 0 8px 10px -6px hsl(var(--ancient-brown)/0.1);
+  }
+
+  /* Navigation Tab Transition Utilities */
+  .nav-tab-transition {
+    @apply transition-colors duration-200;
+  }
+
+  .nav-tab-home {
+    @apply text-[#FFD700] bg-[#FFD700]/10 hover:bg-[#FFD700]/20 border border-[#FFD700]/20 font-bold nav-tab-transition;
+  }
+
+  .nav-tab-nature {
+    @apply text-[#22C55E] bg-[#22C55E]/10 hover:bg-[#22C55E]/20 border border-[#22C55E]/20 font-bold nav-tab-transition;
+  }
+
+  .nav-tab-space {
+    @apply text-[#8B5CF6] bg-[#8B5CF6]/10 hover:bg-[#8B5CF6]/20 border border-[#8B5CF6]/20 font-bold nav-tab-transition;
+  }
+
+  .nav-tab-unscrambler {
+    @apply text-[#F97316] bg-[#F97316]/10 hover:bg-[#F97316]/20 border border-[#F97316]/20 font-bold nav-tab-transition;
+  }
+
+  .nav-tab-translator {
+    @apply text-[#EC4899] bg-[#EC4899]/10 hover:bg-[#EC4899]/20 border border-[#EC4899]/20 font-bold nav-tab-transition;
+  }
+
+  .nav-tab-comics {
+    @apply text-[#06B6D4] bg-[#06B6D4]/10 hover:bg-[#06B6D4]/20 border border-[#06B6D4]/20 font-bold nav-tab-transition;
+  }
+
+  .nav-tab-ocean {
+    @apply text-[#00A8E8] bg-[#00A8E8]/10 hover:bg-[#00A8E8]/20 border border-[#00A8E8]/20 font-bold nav-tab-transition;
+  }
+
+  .nav-tab-creative {
+    @apply text-[#8B5CD6] bg-[#8B5CD6]/10 hover:bg-[#8B5CD6]/20 border border-[#8B5CD6]/20 font-bold nav-tab-transition;
+  }
+
+  .nav-tab-time {
+    @apply text-[hsl(var(--nav-time))] bg-[hsl(var(--nav-time))]/10 hover:bg-[hsl(var(--nav-time))]/20 border border-[hsl(var(--nav-time))]/20 font-bold nav-tab-transition;
+  }
+
+  /* Performance Optimizations */
+  .contain-paint {
+    contain: paint;
+  }
+  
+  .contain-content {
+    contain: content;
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  .will-change-transform-opacity {
+    will-change: transform, opacity;
+  }
+
+  /* Space Theme Utilities */
+  .glow-text {
+    text-shadow: 0 0 10px hsl(var(--space-glow) / 0.5), 0 0 20px hsl(var(--space-glow) / 0.3);
+  }
+
+  .animate-twinkle {
+    animation: twinkle 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 3s infinite;
+  }
+
+  /* Creative Corner Animation Utilities */
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .animate-bounce-playful {
+    animation: bouncePlayful 2s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
+  }
+}
+
+@layer components {
+  /* Global Sticky Header */
+  .global-header {
+    @apply sticky top-0 z-50 w-full bg-background/95 backdrop-blur border-b shadow-sm;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+  }
+
+  .global-nav {
+    background-color: hsl(var(--nav-bg) / 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid hsl(var(--nav-border));
+  }
+
+  .nav-link {
+    @apply flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-md text-muted-foreground transition-colors;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    @apply text-foreground bg-accent/50;
+  }
+
+  .nav-link.active {
+    @apply text-primary font-semibold;
+  }
+
+  .comic-font {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 0.05em;
+  }
+
+  .comic-panel {
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+    position: relative;
+    border-radius: 2px;
+  }
+
+  .comic-panel-bg {
+    background-color: hsl(var(--bread-tan));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease-in-out;
+  }
+
+  .panel-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .speech-bubble {
+    position: relative;
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 24px;
+    padding: 12px 16px;
+    font-weight: 800;
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+    z-index: 20;
+    color: #000;
+  }
+  .speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 24px;
+    border-width: 16px 16px 0;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+    display: block;
+    width: 0;
+  }
+  .speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    left: 26px;
+    border-width: 12px 12px 0;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+  }
+
+  .sound-effect {
+    font-family: 'Bangers', cursive;
+    -webkit-text-stroke: 2px black;
+    letter-spacing: 0.05em;
+  }
+
+  /* Global Blog Styles */
+  .blog-content {
+    @apply max-w-[65ch] mx-auto text-foreground;
+  }
+  .blog-content p {
+    @apply mb-7 text-lg md:text-xl leading-relaxed;
+  }
+  .blog-content h2 {
+    @apply text-3xl md:text-4xl font-bold mt-16 mb-6 tracking-tight text-foreground;
+  }
+  .blog-content h3 {
+    @apply text-2xl md:text-3xl font-semibold mt-12 mb-4 tracking-tight text-foreground;
+  }
+  .blog-content ul {
+    @apply list-disc list-outside pl-6 mb-7 space-y-3;
+  }
+  .blog-content ol {
+    @apply list-decimal list-outside pl-6 mb-7 space-y-3 text-lg md:text-xl;
+  }
+  .blog-content li {
+    @apply text-lg md:text-xl leading-relaxed;
+  }
+  .blog-content a {
+    @apply text-primary font-medium underline underline-offset-4 hover:text-primary/80 transition-colors;
+  }
+  .blog-content blockquote {
+    @apply border-l-4 border-primary pl-6 py-1 my-8 text-xl italic text-muted-foreground bg-muted/30 rounded-r-lg;
+  }
+  .blog-content img {
+    @apply rounded-xl shadow-md my-10 w-full object-cover;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 10px #fff; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes bouncePlayful {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  30% { transform: translateY(-20px) scale(0.9, 1.1); }
+  50% { transform: translateY(0) scale(1.1, 0.9); }
+  70% { transform: translateY(-10px) scale(0.95, 1.05); }
+  85% { transform: translateY(0) scale(1.05, 0.95); }
+}
