@@ -1,22 +1,14 @@
 import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import { readFileSync } from 'node:fs';
-import prerender from 'vite-plugin-prerender'; // 1. Added import
-
-const pkg = JSON.parse(readFileSync('./package.json', 'utf-8'));
-const allDeps = Object.keys(pkg.dependencies || {});
+import { ViteSSG } from 'vite-plugin-ssg'; // Using the modern SSG plugin
 
 export default defineConfig({
-  optimizeDeps: {
-    include: allDeps,
-  },
   plugins: [
     react(),
-    // 2. Added the prerender plugin
-    prerender({
-      staticDir: path.join(__dirname, 'dist'),
-      // List all 16 of your routes here:
+    // This plugin handles the "snapshotting" automatically
+    ViteSSG({
+      // List your 16 routes here
       routes: [
         '/',
         '/nature-explorer',
@@ -41,28 +33,15 @@ export default defineConfig({
         '/time-travelers/greece',
         '/time-travelers/china',
         '/ime-travelers/aztec-maya',
-        '/time-travelers/rome'
+        '/time-travelers/rome',
         // Add your other 14 paths here
       ],
-      // This ensures it waits for your JS to finish before taking the "snapshot"
-      renderer: '@prerenderer/renderer-puppeteer', 
+      formatting: 'minify',
     }),
   ],
   resolve: {
-    extensions: ['.jsx', '.js', '.tsx', '.ts', '.json'],
     alias: {
       '@': path.resolve('./src'),
     },
   },
-  build: {
-    outDir: 'dist',
-    rollupOptions: {
-      external: [
-        '@babel/parser',
-        '@babel/traverse',
-        '@babel/generator',
-        '@babel/types'
-      ]
-    }
-  }
 });
