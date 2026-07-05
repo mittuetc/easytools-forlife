@@ -3,10 +3,10 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-"scripts": {
+  "scripts": {
   "dev": "vite",
-  "build": "vite build && node snapshot.cjs",
-  ""preview": "vite preview"
+  "build": "vite build && node snapshot.js",
+  "preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
