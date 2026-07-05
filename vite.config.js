@@ -1,7 +1,6 @@
 import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import { ViteSSG } from 'vite-plugin-ssg'; // Using the modern SSG plugin
 
 export default defineConfig({
   plugins: [
@@ -44,4 +43,7 @@ export default defineConfig({
       '@': path.resolve('./src'),
     },
   },
+  build: {
+    outDir: 'dist',
+  }
 });

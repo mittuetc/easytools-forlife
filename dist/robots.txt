@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://easytools-forlife.com/sitemap.xml
