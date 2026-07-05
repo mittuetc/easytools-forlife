@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
   "dev": "vite",
-  "build": "vite build && node snapshot.js",
+  //"build": "vite build && node snapshot.js",
+  "build": "vite build && (vite preview --port 3000 & sleep 5 && node snapshot.js && kill $!)"
   "preview": "vite preview"
   },
   "dependencies": {
