@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
   "dev": "vite",
-  "build": "vite build && (vite preview --port 3000 & sleep 5 && node snapshot.js && kill $!)",
+  "build": "vite build && npx puppeteer browsers install chrome && (vite preview --port 3000 & sleep 5 && node snapshot.js && kill $!)",
   "preview": "vite preview"
-  },
+},
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-accordion": "^1.2.12",
