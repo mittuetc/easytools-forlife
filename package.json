@@ -3,10 +3,13 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
+/*   "scripts": {
+    "dev": "vite",
+    "build": "vite build && npx puppeteer browsers install chrome && (vite preview --port 3000 & sleep 5 && node snapshot.js && kill $!)",
+    "preview": "vite preview"
+  }, */
   "scripts": {
-  "dev": "vite",
-  "build": "vite build && npx puppeteer browsers install chrome && (vite preview --port 3000 & sleep 5 && node snapshot.js && kill $!)",
-  "preview": "vite preview"
+  "build": "vite build && node snapshot.js"
 },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

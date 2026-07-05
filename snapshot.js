@@ -1,4 +1,4 @@
-import fs from 'fs';
+/* import fs from 'fs';
 import puppeteer from 'puppeteer';
 
 const routes = ['/', '/blog/aztec-and-maya-civilizations-for-kids', '/nature-explorer', '/space-adventure', '/ocean-explorer', '/time-travelers', '/creative-corner', '/unscrambler', '/translator', '/comics', '/blog/mind-blowing-space-facts', '/blog/why-kids-should-learn-languages', '/blog/ocean-facts-for-kids', '/blog/how-egyptians-built-the-pyramids', '/blog/why-comics-are-good-for-kids', '/blog/ancient-china-inventions', '/blog/word-unscrambler-tips-for-kids', '/blog/ancient-greece-facts-for-kids', '/blog/animals-with-superpowers', '/time-travelers/egypt', '/time-travelers/greece', '/time-travelers/china', '/ime-travelers/aztec-maya', '/time-travelers/rome',]; 
@@ -31,6 +31,33 @@ async function snapshot() {
     console.log(`Snapshot saved for: ${route}`);
   }
   await browser.close();
+}
+
+snapshot();
+ */
+
+import fs from 'fs';
+import { JSDOM } from 'jsdom';
+import path from 'path';
+
+// Define your routes
+const routes = ['/', '/blog/aztec-and-maya-civilizations-for-kids', '/nature-explorer']; // Add all your routes here
+
+async function snapshot() {
+  for (const route of routes) {
+    // Read the static file created by Vite
+    const filePath = path.join(process.cwd(), 'dist', route === '/' ? 'index.html' : `${route}/index.html`);
+    
+    // Use JSDOM to load the HTML
+    const dom = await JSDOM.fromFile(filePath, { runScripts: "dangerously", resources: "usable" });
+    
+    // Capture the finished HTML
+    const html = dom.serialize();
+    
+    // Save it back
+    fs.writeFileSync(filePath, html);
+    console.log(`Snapshot saved for: ${route}`);
+  }
 }
 
 snapshot();
