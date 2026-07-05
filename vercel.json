@@ -1,13 +1,5 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
-    { "source": "/blog", "destination": "/blog/index.html" },
-    { "source": "/blog/:path*", "destination": "/blog/:path*/index.html" },
-    { "source": "/terms", "destination": "/terms/index.html" },
-    { "source": "/privacy", "destination": "/privacy/index.html" },
-    { "source": "/daily-comic", "destination": "/daily-comic/index.html" },
-    { "source": "/comic-series", "destination": "/comic-series/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
