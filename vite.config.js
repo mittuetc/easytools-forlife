@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
     // This plugin handles the "snapshotting" automatically
-    ViteSSG({
+/*     ViteSSG({
       // List your 16 routes here
       routes: [
         '/',
@@ -36,7 +36,7 @@ export default defineConfig({
         // Add your other 14 paths here
       ],
       formatting: 'minify',
-    }),
+    }), */
   ],
   resolve: {
     alias: {
